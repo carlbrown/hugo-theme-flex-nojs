@@ -1,0 +1,21 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Hugo Theme Flexible NOJS"
+license = "GPL 3.0"
+licenselink = "https://github.com/carlbrown/hugo-theme-flex-nojs/blob/master/LICENSE"
+description = "Hugo port of a fork of Flexible-Jekyll"
+homepage = "https://github.com/carlbrown/hugo-theme-flex-nojs"
+tags = ["blog"]
+features = ["nojs"]
+min_version = "0.64.1"
+
+[author]
+  name = "Carl Brown"
+  homepage = "https://escortmissions.com/"
+
+# If porting an existing theme
+[original]
+  name = "Flexible Jekyll"
+  homepage = "http://artemsheludko.com/flexible-jekyll/"
+  repo = "https://github.com/artemsheludko/flexible-jekyll"

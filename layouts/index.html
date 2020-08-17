@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="content-box clearfix">
+	{{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse }}
+	{{ range $paginator.Pages }}
+	<article class="post">
+		{{ if .Params.image }}
+		<a class="post-thumbnail" style="background-image: url({{(print "/images/" .Params.image)}})" href="{{.Permalink}}"></a>
+		{{ else }}
+		{{ end }}
+		<div class="post-content">
+			<h2 class="post-title"><a href="{{ .Permalink }}">{{.Title}}</a></h2>
+			<p>{{ .Summary }}</p>
+			<span class="post-date">Published at {{ .Date.Format "January 2, 2006" }} &middot;</span>
+			<span class="post-words">&nbsp;{{.ReadingTime}} min read</span>
+		</div>
+	</article>
+	{{ end }}
+	<div class="container">
+		<nav class="pagination" role="pagination">
+			<ul>
+				{{ if $paginator.HasPrev }}
+				{{ if $paginator.HasPrev }}<a class="pagination-previous" href="{{ $paginator.Prev.URL }}">Previous</a>{{ end }}
+				{{ if $paginator.HasNext }}<a class="pagination-next" href="{{ $paginator.Next.URL }}">Next</a>{{ end }}
+				{{ end }}
+				{{ range $paginator.Pagers }}
+				<li class="pagination__item">
+					<a class="pagination-link{{ if eq . $paginator }} is-current{{ end }}" aria-label="Goto page {{ .PageNumber }}" href="{{ .URL }}">{{ .PageNumber }}</a>
+				</li>
+				{{ end }}
+
+				<p><span class="page-number">Page {{$paginator.PageNumber}} of {{$paginator.Pages}}</span></p>
+
+				{{ if $paginator.HasNext }}
+				<p><a class="older-posts" href="{{ .Site.BaseURL }}/page/{{ $paginator.Next.URL }}/"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></p>
+				{{ end }}
+			</ul>
+		</nav>
+	</div>
+</div>
+{{ end }}

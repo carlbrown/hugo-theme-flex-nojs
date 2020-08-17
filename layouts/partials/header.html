@@ -1,0 +1,83 @@
+	<aside class="sidebar">
+	  <header>
+	    <div class="about">
+	      <div class="cover-author-image">
+	        {{ if .Site.Title }}
+	          <a href="{{.Site.BaseURL}}/"><img src="{{.Site.BaseURL}}/images/{{ if .Site.Params.author_img }}{{.Site.Params.author_img}}{{ end }}" alt="{{.Site.Title}}"></a>
+	        {{ else }}
+	          <a href="{{.Site.BaseURL}}/"><img src="{{.Site.BaseURL}}/images/{{ if .Site.Params.author_img }}{{.Site.Params.author_img}}{{ end }}" alt="{{.Site.Author}}"></a>
+	        {{ end }}
+	      </div>
+	      {{ if .Site.Title }}
+	        <div class="author-name">{{.Site.Title}}</div>
+	      {{ else }}
+	        <div class="author-name">{{.Site.Author}}</div>
+	      {{ end }}
+	      <div class="author-about">{{.Site.Params.about_author}}</div>
+	    </div>
+	  </header> <!-- End Header -->
+	  <footer>
+	    <section class="contact">
+	      <h3 class="contact-title">Navigation</h3>
+	      <ul>
+	          <li class="home-page"><a href="{{.Site.BaseURL}}/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+	          {{ if .Site.Params.info_page }}
+	            <li class="info-page"><a href="{{.Site.BaseURL}}/{{.Site.Params.info_page}}"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+	          {{ else }}
+	            <li class="info-page"><a href="{{.Site.BaseURL}}/"><i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+	          {{ end }}
+	          {{ if .Site.Params.tags_page }}
+	            <li class="tags-page"><a href="{{.Site.BaseURL}}/{{.Site.Params.tags_page}}"><i class="fa fa-tags" aria-hidden="true"></i></a></li>
+	          {{ else }}
+	            <li class="tags-page"><a href="{{.Site.BaseURL}}/"><i class="fa fa-tags" aria-hidden="true"></i></a></li>
+	          {{ end }}
+	          {{ if .Site.Params.archive_page }}
+	            <li class="archive-page"><a href="{{.Site.BaseURL}}/{{.Site.Params.archive_page}}"><i class="fa fa-folder-open" aria-hidden="true"></i></a></li>
+	          {{ else }}
+	            <li class="archive-page"><a href="{{.Site.BaseURL}}/"><i class="fa fa-folder-open" aria-hidden="true"></i></a></li>
+	          {{ end }}
+	          {{ if .Site.Params.rss_page }}
+			    <link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL}}/{{.Site.Params.rss_page}}" />
+	            <li class="rss-page"><a rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL}}/{{.Site.Params.rss_page}}"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
+	          {{ else }}
+	            <li class="rss-page"><a href="{{.Site.BaseURL}}/"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
+	          {{ end }}
+	      </ul>
+	      <h3 class="contact-title">Contact me</h3>
+	      <ul>
+	        {{ if .Site.Params.twitter }}
+	          <li><a href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+	        {{ else }}
+	          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+	        {{ end }}
+	        {{ if .Site.Params.facebook }}
+	          <li><a href="https://facebook.com/{{ .Site.Params.facebook }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+	        {{ else }}
+	          {{ if .Site.Params.keybase }}
+	            <li class="keybase"><a href="https://keybase.io/{{.Site.Params.keybase}}"><i class="fa fa-key" aria-hidden="true"></i></a></li>
+	          {{ else }}
+	            <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+	          {{ end }}
+	        {{ end }}
+	        {{ if .Site.Params.github }}
+	          <li class="github"><a href="http://github.com/{{.Site.Params.github}}" target="_blank"><i class="fa fa-github"></i></a></li>
+	        {{ else }}
+	          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+	        {{ end }}
+	        {{ if .Site.Params.linkedin }}
+	          <li class="linkedin"><a href="https://in.linkedin.com/in/{{.Site.Params.linkedin}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+	        {{ else }}
+	          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+	        {{ end }}
+	        {{ if .Site.Params.email }}
+	          <li class="email"><a href="mailto:{{.Site.Params.email}}"><i class="fa fa-envelope-o"></i></a></li>
+	        {{ else }}
+	          <li class="email"><a href="mailto:example.david@blog.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+	        {{ end }}
+	      </ul>
+	    </section> <!-- End Section Contact -->
+	    <div class="copyright">
+	      <p>{{ .Date.Format "2006" }} &copy; {{.Site.Params.author}}</p>
+	    </div>
+	  </footer> <!-- End Footer -->
+	</aside> <!-- End Sidebar -->

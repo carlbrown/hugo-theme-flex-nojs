@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+{{- partial "head.html" . -}}
+<body>
+	<div class="wrapper">	
+		{{- partial "header.html" . -}}
+		{{- block "main" . }}{{- end }}
+	</div>
+	{{ if .Site.Params.analytics }}
+		{{- partial "analytics.html" . -}}
+	{{ end }}
+</body>
+</html>
