@@ -100,6 +100,7 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="{{ "/fonts/font-awesome/css/font-awesome.min.css" }}">
 	<!-- Styles -->
-	{{ $styles := resources.Get "/scss/main.scss" | resources.ToCSS }}
+	{{ $css := resources.Get "/scss/main.scss" | resources.ToCSS }}
+	{{ $styles := $css | resources.Minify }}
 	<link rel="stylesheet" href="{{ $styles.Permalink }}">
 </head>
