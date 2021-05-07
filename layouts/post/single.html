@@ -22,7 +22,7 @@
 				<div class="page-tag">
 					{{ if .Params.tags }}
 					{{ range .Params.tags }}
-						<a href="{{ $.Site.BaseURL }}/tags#{{ . }}" class="tag">&#35; {{ . }}</a>
+						<a href="{{ $.Site.BaseURL }}/tags/{{ . }}" class="tag">&#35;{{ . }}</a>
 					{{ end }}
 					{{ end }}
 					{{ if .Params.imageattribution }}

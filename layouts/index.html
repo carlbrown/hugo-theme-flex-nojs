@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="content-box clearfix">
-	{{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse }}
+	{{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse 8 }}
 	{{ range $paginator.Pages }}
 	<article class="post">
 		{{ if .Params.image }}
@@ -22,16 +22,16 @@
 				{{ if $paginator.HasPrev }}<a class="pagination-previous" href="{{ $paginator.Prev.URL }}">Previous</a>{{ end }}
 				{{ if $paginator.HasNext }}<a class="pagination-next" href="{{ $paginator.Next.URL }}">Next</a>{{ end }}
 				{{ end }}
-				{{ range $paginator.Pagers }}
+				<!-- {{ range $paginator.Pagers }}
 				<li class="pagination__item">
 					<a class="pagination-link{{ if eq . $paginator }} is-current{{ end }}" aria-label="Goto page {{ .PageNumber }}" href="{{ .URL }}">{{ .PageNumber }}</a>
 				</li>
-				{{ end }}
+				{{ end }} -->
 
-				<p><span class="page-number">Page {{$paginator.PageNumber}} of {{$paginator.Pages}}</span></p>
+				<p><span class="page-number">Page {{$paginator.PageNumber}} of {{$paginator.TotalPages}}</span></p>
 
 				{{ if $paginator.HasNext }}
-				<p><a class="older-posts" href="{{ .Site.BaseURL }}/page/{{ $paginator.Next.URL }}/"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></p>
+				<p><a class="older-posts" href="{{ .Site.BaseURL }}/{{ $paginator.Next.URL }}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></p>
 				{{ end }}
 			</ul>
 		</nav>
