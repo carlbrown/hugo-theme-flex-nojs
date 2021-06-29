@@ -31,6 +31,10 @@
   }
 }
 
+.page-imageattribution {
+  float: right;
+}
+
 .page-footer {
   display: -webkit-box;
   display: -webkit-flex;
@@ -69,6 +73,20 @@
       }
     }
   }
+    .page-category {
+      a {
+        text-decoration: none;
+        font-size: 10px;
+        padding: 5px 10px;
+        margin-left: 5px;
+        color: $dark-blue;
+        text-transform: uppercase;
+        border: 1px solid $dark-blue;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   .page-tag {
     a {
       text-decoration: none;

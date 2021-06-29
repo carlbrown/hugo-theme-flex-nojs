@@ -1,38 +1,48 @@
 {{ define "main" }}
 <div class="content-box clearfix">
-<article class="article-page">
-	<div class="page-content">
-		{{ if .Params.image }}
-		<div class="page-cover-image">
-			<img class="page-image" src="/images/{{.Params.image}}" alt="{{.Title}}">
-		</div> <!-- End Page Cover Image -->
-		{{ else }}
-		{{ end }}
-		<div class="wrap-content">
-			<header class="header-page">
-				<h1 class="page-title">{{.Title}}</h1>
-				<div class="page-date"><span>{{ .Date.Format "January 2, 2006" }}&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
-			</header>
-			{{.Content}}
-			<div class="page-footer">
-				<div class="page-share">
-					<a href="https://twitter.com/intent/tweet?text={{  .Title }}&url={{ .Site.BaseURL }}{{ .Permalink }}" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
-					<a href="https://facebook.com/sharer.php?u={{ .Site.BaseURL }}{{ .Permalink }}" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+	<article class="article-page">
+		<div class="page-content">
+			{{ if .Params.image }}
+			<div class="page-cover-image">
+				<img class="page-image" src="/images/{{.Params.image}}" alt="{{.Title}}">
+				{{ if .Params.imageattribution }}
+				<div class="page-imageattribution">
+					<a href="{{.Params.imageattribution}}" class="imageattribution">Image Attribution</a>
 				</div>
-				<div class="page-tag">
-					{{ if .Params.tags }}
-					{{ range .Params.tags }}
-						<a href="{{ $.Site.BaseURL }}/tags/{{ . }}" class="tag">&#35;{{ . }}</a>
-					{{ end }}
-					{{ end }}
-					{{ if .Params.imageattribution }}
-						<a href="{{.Params.imageattribution}}" class="tag">Image Attribution</a>
-					{{ else }}
-					{{ end }}
+				{{ else }}
+				{{ end }}
+			</div> <!-- End Page Cover Image -->
+			{{ else }}
+			{{ end }}
+			<div class="wrap-content">
+				<header class="header-page">
+					<h1 class="page-title">{{.Title}}</h1>
+					<div class="page-date"><span>{{ .Date.Format "January 2, 2006" }}&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+				</header>
+				{{.Content}}
+				<div class="page-footer">
+					<!-- <div class="page-share">
+						<a href="https://twitter.com/intent/tweet?text={{  .Title }}&url={{ .Site.BaseURL }}{{ .Permalink }}" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+						<a href="https://facebook.com/sharer.php?u={{ .Site.BaseURL }}{{ .Permalink }}" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+					</div> -->
+					<div class="page-category">
+							{{ if .Params.categories }}
+							{{ range .Params.categories }}
+							<a href="{{ $.Site.BaseURL }}/categories/{{ replace . " " "-" }}" class="tag">{{ . }}</a>
+							{{ end }}
+							{{ end }}
+						</div>
+						<div class="page-tag">
+							{{ if .Params.tags }}
+							{{ range .Params.tags }}
+							<a href="{{ $.Site.BaseURL }}/tags/{{ replace . " " "-" }}" class="tag">&#35;{{ . }}</a>
+							{{ end }}
+							{{ end }}
+						</div>
 				</div>
 			</div>
 		</div> <!-- End Wrap Content -->
-	</div> <!-- End Page Content -->
+</div> <!-- End Page Content -->
 </article> <!-- End Article Page -->
 </div>
 {{ end }}
