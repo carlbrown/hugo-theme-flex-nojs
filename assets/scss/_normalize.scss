@@ -1,5 +1,7 @@
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 
+@import 'variables';
+
 /* Document
    ========================================================================== */
 
@@ -161,8 +163,8 @@ dfn {
  */
 
 mark {
-  background-color: #ff0;
-  color: #000;
+  background-color: $yellow;
+  color: $black;
 }
 
 /**
