@@ -14,6 +14,9 @@ body {
   font-family: 'Lato', sans-serif;
   color: $body-color;
   background-color: $lightergray;
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-gray;
+  }
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -105,16 +108,28 @@ table tfoot td {
 
 .post, .article-page {
   background-color: $white;
+  @media (prefers-color-scheme: dark) {
+    background-color: $black;
+    color: $lightergray;
+  }
 }
 
 ::-moz-selection {
   background: rgba(38, 57, 89, 0.8);
   color: $white;
+  @media (prefers-color-scheme: dark) {
+    background: rgba(217, 198, 166, 0.8);
+    color: $black;
+  }
 }
 
 ::selection {
   background: rgba(38, 57, 89, 0.8);
   color: $white;
+  @media (prefers-color-scheme: dark) {
+    background: rgba(217, 198, 166, 0.8);
+    color: $black;
+  }
 }
 
 .clearfix::before, .clearfix::after {
