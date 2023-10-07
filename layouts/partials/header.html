@@ -57,10 +57,10 @@
 	        {{ if .Site.Params.facebook }}
 	          <li><a href="https://facebook.com/{{ .Site.Params.facebook }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 	        {{ else }}
-	          {{ if .Site.Params.mastodon }}
-	            <li class="mastodon"><a href="{{.Site.Params.mastodon}}"><i class="fa-brands fa-mastodon" aria-hidden="true"></i></a></li>
-	          {{ else if .Site.Params.keybase }}
-	            <li class="keybase"><a href="https://keybase.io/{{.Site.Params.keybase}}"><i class="fa fa-key" aria-hidden="true"></i></a></li>
+              {{ if .Site.Params.keybase }}
+                <li class="keybase"><a href="https://keybase.io/{{.Site.Params.keybase}}"><i class="fa fa-key" aria-hidden="true"></i></a></li>
+	          {{ else if .Site.Params.mastodon }}
+	            <li class="mastodon"><a href="{{.Site.Params.mastodon}}" rel="me"  target="_blank"><i class="fa-brands fa-mastodon" aria-hidden="true"></i></a></li>
 	          {{ else }}
 	            <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 	          {{ end }}
