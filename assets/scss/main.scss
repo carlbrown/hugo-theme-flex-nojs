@@ -19,7 +19,7 @@ body {
   color: $body-color;
   background-color: $lightergray;
   @media (prefers-color-scheme: dark) {
-    background-color: $dark-gray;
+    background-color: $black;
   }
   margin: 0;
   -webkit-font-smoothing: antialiased;
