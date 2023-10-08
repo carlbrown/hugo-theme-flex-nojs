@@ -106,6 +106,9 @@ pre {
 a {
   background-color: transparent; /* 1 */
   -webkit-text-decoration-skip: objects; /* 2 */
+  @media (prefers-color-scheme: dark) {
+    color: #a6b9e9;
+  }
 }
 
 /**

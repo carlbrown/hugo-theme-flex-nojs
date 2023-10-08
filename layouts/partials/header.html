@@ -46,7 +46,12 @@
 	      <h3 class="contact-title">Contact me</h3>
 	      <ul>
   	        {{ if .Site.Params.mastodon_handle }}
-          <li><a href="https://{{ .Site.Params.mastodon_host }}/@{{ .Site.Params.mastodon_handle }}" target="_blank" rel="me"><img  src="{{.Site.BaseURL}}/images/mastodon-logo.png" width=19 height=19 class="fa" aria-hidden="true"></img></a></li>
+          <li><a href="https://{{ .Site.Params.mastodon_host }}/@{{ .Site.Params.mastodon_handle }}" target="_blank" rel="me"><picture>
+  <source 
+    srcset="{{.Site.BaseURL}}/images/mastodon-logo-white.png" 
+    media="(prefers-color-scheme: dark)">
+  <img src="{{.Site.BaseURL}}/images/mastodon-logo.png" width=19 height=19 class="fa" aria-hidden="true" />
+</picture></a></li>
               {{ else }}
     	        {{ if .Site.Params.twitter }}
     	          <li><a href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

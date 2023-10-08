@@ -20,6 +20,11 @@
   height: 100%;
   padding: 20px 10px;
   background-color: $white;
+  @media (prefers-color-scheme: dark) {
+    background-color: $black;
+    color: $lightergray;
+  }
+  
 }
 .about {
   margin: 0 0 40px;
@@ -56,6 +61,9 @@
     font-size: 16px;
     text-transform: uppercase;
     color: $dark;
+    @media (prefers-color-scheme: dark) {
+      color: $lightgray;
+    }
     font-weight: 700;
     &::after {
       content: "";
@@ -97,6 +105,11 @@
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
   align-items: stretch;
+  background-color: $white;
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark;
+    color: $lightergray;
+  }
 }
 
 .contact {
@@ -150,6 +163,10 @@
       }
       a {
         color: $body-color;
+        @media (prefers-color-scheme: dark) {
+          background-color: transparent;
+          color: $white;
+        }
         display: block;
         padding: 5px;
         font-size: 18px;
@@ -233,6 +250,9 @@ footer {
         font-family: 'PT Serif', serif;
         text-decoration: none;
         color: $dark-blue;
+        @media (prefers-color-scheme: dark) {
+          color: #a6b9e9;
+        }
       }
     }
     p {
