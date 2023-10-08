@@ -8,6 +8,10 @@
 
 html {
   line-height: 1.5;
+  background-color: $lightergray;
+  @media (prefers-color-scheme: dark) {
+    background-color: black;
+  }
 }
 
 body {
