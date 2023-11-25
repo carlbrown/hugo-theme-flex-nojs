@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="content-box clearfix">
-	{{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse 8 }}
+	{{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts").ByPublishDate.Reverse 8 }}
 	{{ range $paginator.Pages }}
 	<article class="post">
 		{{ if .Params.image }}
