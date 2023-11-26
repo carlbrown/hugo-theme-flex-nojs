@@ -82,6 +82,10 @@
         color: $dark-blue;
         text-transform: uppercase;
         border: 1px solid $dark-blue;
+        @media (prefers-color-scheme: dark) {
+             color: $light-blue;
+             border: 1px solid $light-blue;
+        }
         &:hover {
           text-decoration: underline;
         }
@@ -96,6 +100,10 @@
       color: $dark-blue;
       text-transform: uppercase;
       border: 1px solid $dark-blue;
+     @media (prefers-color-scheme: dark) {
+         color: $light-blue;
+         border: 1px solid $light-blue;
+     }
       &:hover {
         text-decoration: underline;
       }

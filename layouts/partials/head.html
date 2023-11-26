@@ -105,4 +105,5 @@
 	{{ $css := resources.Get "/scss/main.scss" | resources.ToCSS }}
 	{{ $styles := $css | resources.Minify }}
 	<link rel="stylesheet" href="{{ $styles.Permalink }}">
+    {{- partial "override_head_additions.html" . -}}
 </head>
